@@ -1,0 +1,7 @@
+{
+  "properties": [
+      { "name": "think",  "value": "$DOCKERHUB_ID" }
+  ],
+  "constraints": [
+  ]
+}
