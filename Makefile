@@ -45,7 +45,7 @@ publish-policy:
         DOCKERHUB_ID="$(DOCKERHUB_ID)" \
         SERVICE_NAME="$(SERVICE_NAME)" \
         SERVICE_VERSION="$(SERVICE_VERSION)" \
-	hzn exchange deployment addpolicy -f deployment-policy-mqtt.json ${HZN_ORG_ID}/policy-${SERVICE_NAME}_${ARCH}_${SERVICE_VERSION}
+	hzn exchange deployment addpolicy -f deployment-policy-mqtt.json ${HZN_ORG_ID}/policy-${SERVICE_NAME}_${DOCKERHUB_ID}_${ARCH}_${SERVICE_VERSION}
 
 agent-run:
 	hzn register --policy node-policy.json
