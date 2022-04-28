@@ -6,6 +6,8 @@ a managed service and policy in IBM Edge Application Manager.  It queries
 psutil CPU data periodically and sends the CPU results over MQTT to
 Watson IoT Platform and plots the results in a chart.
 
+![CPU Edge Node Telemetry Data](CPU-Edge-Node-Telemetry-Data.png)
+
 ### Prerequistes
 
 - Docker installed
