@@ -48,6 +48,7 @@ publish-policy:
 	hzn exchange deployment addpolicy -f deployment-policy-mqtt.json ${HZN_ORG_ID}/policy-${SERVICE_NAME}_${ARCH}_${SERVICE_VERSION}
 
 agent-run:
+	@DOCKERHUB_ID="$(DOCKERHUB_ID)" \
 	hzn register --policy node-policy.json
 
 agent-stop:
