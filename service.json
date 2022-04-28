@@ -7,7 +7,32 @@
   "public": true,
   "sharable": "singleton",
   "requiredServices": [],
-  "userInput": [],
+  "userInput": [
+    {
+      "name": "MQTT_ORGID",
+      "label": "Watson IoT Platform Org",
+      "type": "string",
+      "defaultValue": ""
+    },
+    {
+      "name": "MQTT_DEVICETYPE",
+      "label": "Watson IoT DeviceType",
+      "type": "string",
+      "defaultValue": "ThinkEdge"
+    },
+    {
+      "name": "MQTT_DEVICEID",
+      "label": "Watson IoT Device",
+      "type": "string",
+      "defaultValue": "instructor"
+    },
+    {
+      "name": "MQTT_DEVICETOKEN",
+      "label": "Watson IoT Device Token",
+      "type": "string",
+      "defaultValue": "Think2022"
+    }
+  ],
   "deployment": {
     "services": {
       "$SERVICE_NAME": {

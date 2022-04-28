@@ -21,32 +21,7 @@
       "serviceOrgid": "$HZN_ORG_ID",
       "serviceUrl": "$SERVICE_NAME",
       "serviceVersionRange": "[$SERVICE_VERSION]",
-      "inputs": [
-        {
-          "name": "MQTT_ORGID",
-          "label": "Watson IoT Platform Org",
-          "type": "string",
-          "value": "5yrusp"
-        },
-        {
-          "name": "MQTT_DEVICETYPE",
-          "label": "Watson IoT DeviceType",
-          "type": "string",
-          "value": "ThinkEdge"
-        },
-        {
-          "name": "MQTT_DEVICEID",
-          "label": "Watson IoT Device",
-          "type": "string",
-          "value": "instructor"
-        },
-        {
-          "name": "MQTT_DEVICETOKEN",
-          "label": "Watson IoT Device Token",
-          "type": "string",
-          "value": "Think2022"
-        }
-      ]
+      "inputs": []
     }
   ]
 }
