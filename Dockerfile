@@ -1,16 +1,26 @@
-FROM python:3.7-slim as build
+FROM python:3.10 as build
 LABEL stage=builder
 
-COPY messaging.pem .
-COPY psutil2mqtt.py .
+RUN apt update && apt install -y --no-install-recommends gcc build-essential python3-dev
 
-## Deployment container
-FROM python:3.7-slim
-RUN mkdir -p /app && \
-    pip install --trusted-host=pypi.python.org \
+RUN mkdir -p /app
+
+RUN python -m venv /app
+# Make sure we use the virtualenv:
+ENV PATH="/app/bin:$PATH"
+RUN pip install --trusted-host=pypi.python.org \
     --trusted-host=pypi.org \
     --trusted-host=files.pythonhosted.org \
-    paho-mqtt psutil
-COPY --from=build / /app
+    psutil paho-mqtt
+
+COPY messaging.pem /app/
+COPY psutil2mqtt.py /app/
+
+## Deployment container
+FROM python:3.10-slim
+
+RUN mkdir -p /app
+ENV PATH="/app/bin:$PATH"
+COPY --from=build /app /app
 WORKDIR /app
 CMD [ "python3", "-u", "psutil2mqtt.py"]
