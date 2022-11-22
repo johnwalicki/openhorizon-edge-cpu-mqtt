@@ -2,7 +2,7 @@
 
 DOCKERHUB_ID:=docker.io/walicki
 export SERVICE_NAME ?= "cpu-mqtt-example-instructor"
-export SERVICE_VERSION ?= 1.1
+export SERVICE_VERSION ?= 1.2
 export SERVICE_ORG_ID ?= $(HZN_ORG_ID)
 
 export CONTAINER_IMAGE_BASE ?= $(DOCKERHUB_ID)/$(SERVICE_NAME)
