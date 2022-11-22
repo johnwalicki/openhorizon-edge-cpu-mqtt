@@ -1,4 +1,4 @@
-FROM python:3.10 as build
+FROM python:3.11 as build
 LABEL stage=builder
 
 RUN apt update && apt install -y --no-install-recommends gcc build-essential python3-dev
@@ -17,7 +17,7 @@ COPY messaging.pem /app/
 COPY psutil2mqtt.py /app/
 
 ## Deployment container
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 RUN mkdir -p /app
 ENV PATH="/app/bin:$PATH"
